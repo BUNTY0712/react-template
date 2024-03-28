@@ -1,16 +1,20 @@
-import { Box, Grid } from '@mui/material';
-import React from 'react';
+import React from 'react'
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom'
+import Login from './Login'
+import Dashboard from './Dashboard'
 
 const App = () => {
-	return (
-		<>
-			<Grid container>
-				<Grid item lg={12}>
-					<Box></Box>
-				</Grid>
-			</Grid>
-		</>
-	);
-};
+  return (
+    <> 
+      <Router>
+        <Routes>
+          <Route path='/' element={<Login/>}></Route>
+          <Route path='/dashboard' element={<Dashboard/>}></Route>
 
-export default App;
+        </Routes>
+      </Router>
+    </>
+  )
+}
+
+export default App
